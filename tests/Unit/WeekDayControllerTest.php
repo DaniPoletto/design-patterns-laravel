@@ -13,6 +13,7 @@ use App\Service\WeekDay\FridayMessage;
 use App\Service\WeekDay\SaturdayMessage;
 use App\Service\WeekDay\SundayMessage;
 use App\Service\WeekDay\HolidayMessage;
+use App\Service\HolidayService; 
 
 class WeekDayControllerTest extends TestCase
 {
@@ -23,10 +24,13 @@ class WeekDayControllerTest extends TestCase
     {
         Carbon::setTestNow(Carbon::parse($dayOfWeek)); 
         
+        $holidayService = new HolidayService(); 
         $controller = new WeekDayController();
-        $response = $controller->index();
+        $response = $controller->index($holidayService);
 
-        $this->assertEquals($expectedMessage, $response);
+        $message = $response->getData()["message"];
+
+        $this->assertEquals($expectedMessage, $message);
     }
 
     static public function weekDayProvider()
@@ -39,7 +43,7 @@ class WeekDayControllerTest extends TestCase
             ['Friday', 'Happy Friday!'],
             ['Saturday', 'Happy Saturday!'],
             ['Sunday', 'Happy Sunday!'],
-            //['Holiday', 'Happy holiday!'],
+            ['2023-12-25', 'Happy Holiday!'],
         ];
     }
 }
