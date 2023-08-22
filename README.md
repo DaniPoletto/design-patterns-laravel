@@ -4,3 +4,10 @@
 This project was created as a test for a position as a back-end developer. 
 
 - Example of Strategy
+
+   ![Imagem](https://github.com/DaniPoletto/strategy-observer-laravel/blob/main/strategy_example.png)
+   
+- Example of Observer
+
+![Imagem](https://github.com/DaniPoletto/strategy-observer-laravel/blob/main/observer_example.png)
+   
