@@ -33,6 +33,17 @@ class WeekDayControllerTest extends TestCase
         $this->assertEquals($expectedMessage, $message);
     }
 
+    /**
+     * @dataProvider weekDayMessageProvider
+     */
+    public function testGetWeekDayMessage($dayOfWeek, $expectedMessage)
+    {
+        $controller = new WeekDayController();
+        $response = $controller->getWeekDayMessage($dayOfWeek);
+
+        $this->assertEquals($expectedMessage, $response);
+    }
+
     static public function weekDayProvider()
     {
         return [
@@ -44,6 +55,21 @@ class WeekDayControllerTest extends TestCase
             ['Saturday', 'Happy Saturday!'],
             ['Sunday', 'Happy Sunday!'],
             ['2023-12-25', 'Happy Holiday!'],
+        ];
+    }
+
+    static public function weekDayMessageProvider()
+    {
+        return [
+            ['Monday', 'Happy Monday!'],
+            ['Tuesday', 'Happy Tuesday!'],
+            ['Wednesday', 'Happy Wednesday!'],
+            ['Thursday', 'Happy Thursday!'],
+            ['Friday', 'Happy Friday!'],
+            ['Saturday', 'Happy Saturday!'],
+            ['Sunday', 'Happy Sunday!'],
+            ['Holiday', 'Happy Holiday!'],
+            ['Not found', 'Default message for this day of the week'],
         ];
     }
 }
