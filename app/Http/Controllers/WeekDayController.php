@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 use App\Service\HolidayService;
 use App\Service\WeekDay\WeekDayMessage;
 
