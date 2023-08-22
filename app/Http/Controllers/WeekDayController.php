@@ -18,6 +18,13 @@ class WeekDayController extends Controller
             $dayOfWeekName = $today->englishDayOfWeek;
         }
 
+        $message = $this->getWeekDayMessage($dayOfWeekName);
+
+        return view('strategy', ['message' => $message]);
+    }
+
+    public function getWeekDayMessage($dayOfWeekName)
+    {
         $messageClassName = 'App\Service\WeekDay\\' . $dayOfWeekName . 'Message';
     
         if (class_exists($messageClassName)) {
@@ -27,6 +34,6 @@ class WeekDayController extends Controller
             $message = "Default message for this day of the week";
         }
 
-        return view('strategy', ['message' => $message]);
+        return $message;
     }
 }
