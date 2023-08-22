@@ -24,9 +24,11 @@ class WeekDayController extends Controller
     
         if (class_exists($messageClassName)) {
             $weekDayMessage = new WeekDayMessage();
-            return $weekDayMessage->returnMessage(new $messageClassName());
+            $message = $weekDayMessage->returnMessage(new $messageClassName());
         } else {
-            return "Mensagem padrão para este dia da semana";
+            $message = "Mensagem padrão para este dia da semana";
         }
+
+        return view('strategy', ['message' => $message]);
     }
 }

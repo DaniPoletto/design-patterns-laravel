@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/strategy', [WeekDayController::class, 'index']);
+Route::get('/strategy', [WeekDayController::class, 'index'])->name('strategy');;
