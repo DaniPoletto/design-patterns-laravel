@@ -1,5 +1,6 @@
 <?php
 
+use App\Observers\Email;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WeekDayController;
 
@@ -18,4 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/strategy', [WeekDayController::class, 'index'])->name('strategy');;
+Route::get('/strategy', [WeekDayController::class, 'index'])->name('strategy');
+
+Route::get('/observer', function () {
+    $email = app(Email::class);
+    $email->notify();
+})->name('observer');

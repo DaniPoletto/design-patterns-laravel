@@ -7,6 +7,8 @@
         <div class="jumbotron">
             <h1 class="display-4">Welcome to the Home Page</h1>
             <a href="{{ route('strategy') }}" class="btn btn-primary btn-lg">Go to Strategy Example</a>
+            <br>
+            <a href="{{ route('observer') }}" class="btn btn-primary btn-lg">Go to Observer Example</a>
         </div>
     </div>
 @endsection
