@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Strategy Message')
+@section('title', 'Strategy Example')
 
 @section('content')
     <div class="jumbotron">
