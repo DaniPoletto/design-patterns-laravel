@@ -3,4 +3,4 @@ services:
   app:
     image: danipoletto/laravel-project:latest
     ports:
-      - "8000:8000"
+      - "8080:8000"
