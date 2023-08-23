@@ -42,5 +42,5 @@ php artisan test
 
    ![Imagem](https://github.com/DaniPoletto/strategy-observer-laravel/blob/main/observer_example.png)
 
-## Other projects
+## Other projects 
 [Explore my other projects](https://github.com/DaniPoletto?tab=repositories)
