@@ -16,7 +16,7 @@ componser install
 
 3. Run the server
 ``` 
-php artisan serve
+docker-compose up
 ```
 
 ## Run tests
