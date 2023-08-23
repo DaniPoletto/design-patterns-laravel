@@ -11,7 +11,7 @@ This project provides examples of design patterns.
 
 2. Install dependencies
 ```
-componser install
+composer install
 ```
 
 3. Run the server
