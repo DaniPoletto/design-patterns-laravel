@@ -1,6 +1,6 @@
 version: '3'
 services:
   app:
-    image: danipoletto/laravel-project:1
+    image: danipoletto/laravel-project:latest
     ports:
       - "8000:8000"
