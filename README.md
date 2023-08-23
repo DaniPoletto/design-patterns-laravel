@@ -20,7 +20,12 @@ docker-compose up
 ```
 
 ## Run tests
-``` 
+
+```
+docker exec -it container-name bash
+```
+
+```
 php artisan test
 ```
 
