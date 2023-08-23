@@ -15,6 +15,7 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t danipoletto/laravel-project:latest .
+        docker build -t laravel-project .
+        docker tag laravel-project danipoletto/laravel-project:latest
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_ACCESS_TOKEN }}
         docker push danipoletto/laravel-project:latest
